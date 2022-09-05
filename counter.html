@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Counter</title>
+
+    <style>
+        .container{
+            position: relative;
+            height: 200px;
+            width: 200px;
+            margin: auto;
+            border: 2px solid black;
+            background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+        }
+        #button{
+            position: absolute;
+            height: 50px;
+            width: 70px; 
+            bottom: 0;
+            left: 50px
+        }
+        #btn{
+            height: 40px;
+            width: 100px;
+            border-radius: 10px;
+            color: red;
+            background-color: yellowgreen;
+            border-color: yellowgreen;  
+        }
+        #screen{
+            color:black;
+            text-align: center;
+            font-size: large;
+            position: absolute;
+            top: 10px;
+            left: 50px;
+            height: 40px;
+            width: 100px;
+            background-color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="screen"></div>
+        <div id="button">
+            <button id="btn" onclick="count()">Count</button>
+        </div>
+    </div>
+
+    <script>
+    const count = (()=>{
+    const scr = document.getElementById('screen');
+    let counter =0;
+    return ()=>{counter++; 
+        console.log(counter);
+        scr.innerText = `${counter}`;}
+    })();//IIFE(Immidietly Invoked function Expression)
+
+ 
+    </script>
+</body>
+</html>
